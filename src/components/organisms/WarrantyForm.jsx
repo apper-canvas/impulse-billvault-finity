@@ -4,8 +4,8 @@ import { toast } from 'react-toastify'
 import Button from '@/components/atoms/Button'
 import Text from '@/components/atoms/Text'
 import FormField from '@/components/molecules/FormField'
+import FileUpload from '@/components/molecules/FileUpload'
 import { warrantyService, categoryService } from '@/services'
-
 const WarrantyForm = ({ warranty, onSubmit, onCancel, isOpen }) => {
   const [formData, setFormData] = useState({
     productName: '',
@@ -15,11 +15,13 @@ const WarrantyForm = ({ warranty, onSubmit, onCancel, isOpen }) => {
     vendor: '',
     serialNumber: '',
     notes: ''
+notes: '',
+    images: []
   })
   const [categories, setCategories] = useState([])
+  const [uploadedFiles, setUploadedFiles] = useState([])
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState({})
-
   useEffect(() => {
     const loadCategories = async () => {
       try {
@@ -40,9 +42,11 @@ const WarrantyForm = ({ warranty, onSubmit, onCancel, isOpen }) => {
         purchaseDate: warranty.purchaseDate || '',
         expirationDate: warranty.expirationDate || '',
         vendor: warranty.vendor || '',
-        serialNumber: warranty.serialNumber || '',
-        notes: warranty.notes || ''
+serialNumber: warranty.serialNumber || '',
+        notes: warranty.notes || '',
+        images: warranty.images || []
       })
+      setUploadedFiles(warranty.images || [])
     } else {
       setFormData({
         productName: '',
@@ -50,9 +54,11 @@ const WarrantyForm = ({ warranty, onSubmit, onCancel, isOpen }) => {
         purchaseDate: '',
         expirationDate: '',
         vendor: '',
-        serialNumber: '',
-        notes: ''
+serialNumber: '',
+        notes: '',
+        images: []
       })
+      setUploadedFiles([])
     }
     setErrors({})
   }, [warranty, isOpen])
@@ -95,17 +101,20 @@ const WarrantyForm = ({ warranty, onSubmit, onCancel, isOpen }) => {
       return
     }
 
-    setLoading(true)
+setLoading(true)
     try {
+      // Include uploaded files in form data
+      const submitData = { ...formData, images: uploadedFiles }
+      
       let result
       if (warranty) {
-        result = await warrantyService.update(warranty.Id, formData)
+        result = await warrantyService.update(warranty.Id, submitData)
         toast.success('Warranty updated successfully')
+toast.success('Warranty updated successfully')
       } else {
-        result = await warrantyService.create(formData)
+        result = await warrantyService.create(submitData)
         toast.success('Warranty created successfully')
       }
-      
       onSubmit?.(result)
     } catch (error) {
       toast.error(error.message || 'Failed to save warranty')
@@ -114,13 +123,22 @@ const WarrantyForm = ({ warranty, onSubmit, onCancel, isOpen }) => {
     }
   }
 
-  const handleChange = (field, value) => {
+const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }))
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: null }))
     }
   }
 
+  const handleFilesChange = (files) => {
+    setUploadedFiles(files)
+    setFormData(prev => ({ ...prev, images: files }))
+  }
+
+  const clearFiles = () => {
+    setUploadedFiles([])
+    setFormData(prev => ({ ...prev, images: [] }))
+  }
   return (
     <AnimatePresence>
       {isOpen && (
@@ -249,11 +267,23 @@ const WarrantyForm = ({ warranty, onSubmit, onCancel, isOpen }) => {
                     className="block w-full px-3 py-2.5 text-sm text-surface-900 bg-white border border-surface-300 rounded-lg placeholder-surface-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                     placeholder="Additional notes about the warranty..."
                   />
+/>
+                </FormField>
+
+                <FormField
+                  label="Warranty Cards & Receipts"
+                  description="Upload images of warranty cards, receipts, or other related documents"
+                >
+                  <FileUpload
+                    files={uploadedFiles}
+                    onFilesChange={handleFilesChange}
+                    maxFiles={5}
+                    maxSize={5 * 1024 * 1024} // 5MB
+                  />
                 </FormField>
 
                 <div className="flex justify-end space-x-3 pt-4">
                   <Button
-                    type="button"
                     variant="outline"
                     onClick={onCancel}
                     disabled={loading}
