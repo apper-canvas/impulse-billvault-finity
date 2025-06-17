@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "name": "Electricity Bill",
+    "amount": 125.50,
+    "category": "Utilities",
+    "dueDate": "2024-02-15",
+    "frequency": "monthly",
+    "isPaid": false,
+    "notes": "Winter heating increase expected"
+  },
+  {
+    "Id": 2,
+    "name": "Internet Service",
+    "amount": 79.99,
+    "category": "Utilities",
+    "dueDate": "2024-02-10", 
+    "frequency": "monthly",
+    "isPaid": true,
+    "notes": "Fiber optic plan with unlimited data"
+  },
+  {
+    "Id": 3,
+    "name": "Car Insurance Premium",
+    "amount": 450.00,
+    "category": "Insurance",
+    "dueDate": "2024-03-01",
+    "frequency": "monthly",
+    "isPaid": false,
+    "notes": "Annual renewal coming up in June"
+  },
+  {
+    "Id": 4,
+    "name": "Mortgage Payment",
+    "amount": 1850.00,
+    "category": "Housing",
+    "dueDate": "2024-02-01",
+    "frequency": "monthly", 
+    "isPaid": true,
+    "notes": "Principal and interest payment"
+  },
+  {
+    "Id": 5,
+    "name": "Property Tax",
+    "amount": 2400.00,
+    "category": "Housing",
+    "dueDate": "2024-04-15",
+    "frequency": "yearly",
+    "isPaid": false,
+    "notes": "Annual property assessment due"
+  }
+]

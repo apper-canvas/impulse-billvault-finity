@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "name": "Electronics",
+    "icon": "Smartphone",
+    "color": "#3B82F6"
+  },
+  {
+    "Id": 2,
+    "name": "Jewelry",
+    "icon": "Gem",
+    "color": "#8B5CF6"
+  },
+  {
+    "Id": 3,
+    "name": "Appliances",
+    "icon": "Refrigerator",
+    "color": "#10B981"
+  },
+  {
+    "Id": 4,
+    "name": "Furniture",
+    "icon": "Armchair",
+    "color": "#F59E0B"
+  },
+  {
+    "Id": 5,
+    "name": "Utilities",
+    "icon": "Zap",
+    "color": "#EF4444"
+  },
+  {
+    "Id": 6,
+    "name": "Insurance",
+    "icon": "Shield",
+    "color": "#06B6D4"
+  },
+  {
+    "Id": 7,
+    "name": "Housing",
+    "icon": "Home",
+    "color": "#84CC16"
+  },
+  {
+    "Id": 8,
+    "name": "General",
+    "icon": "Package",
+    "color": "#64748B"
+  }
+]

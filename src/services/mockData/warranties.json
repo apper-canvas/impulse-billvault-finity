@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "productName": "MacBook Pro 14-inch",
+    "category": "Electronics",
+    "purchaseDate": "2023-01-15",
+    "expirationDate": "2025-01-15",
+    "vendor": "Apple Inc.",
+    "serialNumber": "C02XK1ABMD6T",
+    "notes": "AppleCare+ extended warranty included"
+  },
+  {
+    "Id": 2,
+    "productName": "Samsung 65-inch QLED TV",
+    "category": "Electronics",
+    "purchaseDate": "2023-06-20",
+    "expirationDate": "2024-06-20",
+    "vendor": "Samsung Electronics",
+    "serialNumber": "0000000A",
+    "notes": "Standard manufacturer warranty, purchased at Best Buy"
+  },
+  {
+    "Id": 3,
+    "productName": "KitchenAid Stand Mixer",
+    "category": "Appliances",
+    "purchaseDate": "2022-12-01",
+    "expirationDate": "2024-12-01",
+    "vendor": "KitchenAid",
+    "serialNumber": "KA123456789",
+    "notes": "Professional 6-quart bowl-lift model"
+  },
+  {
+    "Id": 4,
+    "productName": "Diamond Engagement Ring",
+    "category": "Jewelry",
+    "purchaseDate": "2023-03-10",
+    "expirationDate": "2025-03-10",
+    "vendor": "Tiffany & Co.",
+    "serialNumber": "TF789012345",
+    "notes": "Lifetime cleaning and inspection included"
+  },
+  {
+    "Id": 5,
+    "productName": "Herman Miller Aeron Chair",
+    "category": "Furniture",
+    "purchaseDate": "2021-08-15",
+    "expirationDate": "2024-08-15",
+    "vendor": "Herman Miller",
+    "serialNumber": "HM987654321",
+    "notes": "12-year warranty on mechanism, 2-year on gas cylinder"
+  }
+]

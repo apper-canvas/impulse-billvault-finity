@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "title": "20% Off Next Purchase",
+    "code": "SAVE20NOW",
+    "expirationDate": "2024-03-15",
+    "category": "Electronics",
+    "value": "20%",
+    "terms": "Valid on purchases over $100. Cannot be combined with other offers."
+  },
+  {
+    "Id": 2,
+    "title": "Free Shipping Weekend",
+    "code": "FREESHIP",
+    "expirationDate": "2024-02-28",
+    "category": "General",
+    "value": "Free Shipping",
+    "terms": "No minimum purchase required. Valid on all items."
+  },
+  {
+    "Id": 3,
+    "title": "Buy One Get One 50% Off",
+    "code": "BOGO50",
+    "expirationDate": "2024-04-01",
+    "category": "Jewelry",
+    "value": "50% off 2nd item",
+    "terms": "Equal or lesser value item receives discount. In-store only."
+  },
+  {
+    "Id": 4,
+    "title": "$50 Off Appliances",
+    "code": "APPLIANCE50",
+    "expirationDate": "2024-05-15",
+    "category": "Appliances",
+    "value": "$50",
+    "terms": "Valid on appliances $300 or more. Excludes clearance items."
+  }
+]
